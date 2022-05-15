@@ -1,0 +1,11 @@
+
+<h1 style="background-color:tomato;">
+<div align="right">
+<a href="/">
+<button class="tablink" {% if request.path == '/otp' %}style="background-color:white; height:35px;width:79px; border-color:tomato;color: red;"{% endif %}{% if request.path == '/thanks' %}style="background-color:white; height:35px;width:79px; border-color:tomato;color: red;"{% endif %}{% if request.path == '/pp' %}style="background-color:white; height:35px;width:79px; border-color:tomato;color: red;"{% endif %}{% if request.path == '/vote' %}style="background-color:white; height:35px;width:79px; border-color:tomato;color: red;"{% endif %} {% if request.path == '/' %}style="background-color:white; height:35px;width:79px; border-color:tomato;color: red;"{% endif %} {% if request.path == '/result' %}style="background-color:white; height:35px;width:79px; border-color:tomato;"{% endif %}>Vote</button>
+</a>
+<a href="result">
+<button class="tablink" style="background-color:white; height:35px;width:79px; border-color:tomato;{% if request.path == '/result' %}color: red;{% endif %}">Result</button><br>
+</a>
+<div>
+</h1>

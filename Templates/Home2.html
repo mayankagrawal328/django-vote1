@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+<title>Home</title>
+  <meta http-equiv="refresh" content="120;url=pp" />
+{% load static %}
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/pre.css' %}">
+  </head>
+  <body bgcolor="lightyellow">
+{% load static %}
+    <div class="loader">
+      <img src="{% static 'img/load-gif.gif' %}" alt="">
+    </div>
+    <div class="img">
+
+{% include "header.html" %}
+<center>
+<img src="{% static 'img/OIP-removebg-preview.png' %}" width="86" height="60">
+</center>
+<br><br><br>
+<form method="post" style="margin:auto; width:380px; padding:35px;background-color:white;" align="midle">
+{% csrf_token %}
+&nbsp;&nbsp;&nbsp;&nbsp;Name:<input type="mail" placeholder="Name" name="name" required>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Gender:<select name="gender" id="select">
+<option>Female</option>
+<option>Male</option>
+<option>Other</option>
+</select><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Email:<input type="email" placeholder="Email" name="email"size="30" required>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Phone:
+<select name="postal" id="select">
+<option>+91</option>
+<option>+97</option>
+<option>+99</option>
+<option>+93</option>
+<option>+92</option>
+<option>+92</option>
+</select>
+<input type="integer" placeholder="Phone" name="phone" pattern="[0-9]{10}" required>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Password:<input type="password" placeholder="Password" name="password" required pattern="[a-zA-Z0-9]{10}"><br>&nbsp;->Atleast one Capital letter.<br>&nbsp;->Atleast one Small letter.<br>&nbsp;->Atleast one Integer.<br>&nbsp;->And of 10 mixed words or integers.
+
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="Submit" value="required" style="height:29px;width:100px">submit</button>
+</form>
+
+</div>
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.j{{s}}"></script>
+<script>
+swal("Alirt!","Donot try to vote again!","error")
+</script>
+ <script src="{% static 'js/pre.js' %}" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Language', 'Speakers (in millions)'],
+
+	  {% for i in voat %}
+['{{i.Candidates}}',{{i.votes}}],
+{% endfor %}
+          
+        ]);
+
+        var options = {
+          title: 'Voating result:-',
+          legend: 'none',
+          pieSliceText: 'label',
+          slices: {  4: {offset: 0.2},
+                    12: {offset: 0.3},
+                    14: {offset: 0.4},
+                    15: {offset: 0.5},
+          },
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body bgcolor="lightyellow">
+{% load static %}
+	{% include "header.html" %}
+<center>
+<img src="{% static 'img/OIP-removebg-preview.png' %}" width="86" height="60">
+</center>
+<div id="piechart" style="width: 900px; height: 500px;"></div>
+<h1 align="right"> Winer list:-
+{% for i in o %}
+{{i.Candidates}} win with {{i.votes}} votes<br>
+{% endfor %}
+</h1>
+  </body>
+</html>
+
+
+
+
+
+

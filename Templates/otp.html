@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+<title>otp</title>
+  <meta http-equiv="refresh" content="120;url=pp" />
+{% load static %}
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/pre.css' %}">
+  </head>
+  <body bgcolor="lightyellow">
+{% load static %}
+    <div class="loader">
+      <img src="{% static 'img/load-gif.gif' %}" alt="">
+    </div>
+    <div class="img">
+      
+
+   
+
+
+
+
+
+
+
+
+
+
+{% include "header.html" %}
+<center>
+
+<img src="{% static 'img/OIP-removebg-preview.png' %}" width="86" height="60">
+
+<h1 color='red'>{{k}}</h1><br><br><br>
+<form method='get'>
+OTP:&nbsp;&nbsp;<input type="otp" placeholder="otp" name="otp"size="30" required>
+<input type="submit">
+</form>
+<br>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+
+Resend OTP :-
+<center>
+<span id="countdown">You have to wait 6 seconds.</span></center>
+<br />
+<div style="text-align: center;">
+<br />
+
+<a href="otp" id="download_link" style="display: none;">
+<form method='post'>
+{% csrf_token %}
+<input type="hidden" id="country" name="jj" value="{{y}}" readonly>
+  <input type="submit" value="Click here" onclick="window.location.reload()">
+</form>
+</a>
+<noscript>JavaScript needs to be enabled in order to be able to download.</noscript>
+<script type="application/javascript">
+(function(){
+var message = "%d seconds before download link appears";
+// seconds before download link becomes visible
+var count = 6;
+var countdown_element = document.getElementById("countdown");
+var download_link = document.getElementById("download_link");
+var timer = setInterval(function(){
+// if countdown equals 0, the next condition will evaluate to false and the else-construct will be executed
+if (count) {
+// display text
+countdown_element.innerHTML = "You have to wait %d seconds.".replace("%d", count);
+// decrease counter
+count--;
+} else {
+// stop timer
+clearInterval(timer);
+// hide countdown
+countdown_element.style.display = "none";
+// show download link
+download_link.style.display = "";
+}
+}, 6000);
+})();
+</script>
+</div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+     <script src="{% static 'js/pre.js' %}" charset="utf-8"></script>
+  </body>
+</html>

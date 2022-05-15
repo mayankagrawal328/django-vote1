@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+<title>
+Vote</title>
+  <meta http-equiv="refresh" content="120;url=pp" />
+{% load static %}
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/pre.css' %}">
+  </head>
+  <body bgcolor="lightyellow">
+{% load static %}
+    <div class="loader">
+      <img src="{% static 'img/load-gif.gif' %}" alt="">
+    </div>
+    <div class="img">
+{% include "header.html" %}
+<center>
+<img src="{% static 'img/OIP-removebg-preview.png' %}" width="86" height="60">
+
+<br>
+<br><br><br>
+<div>
+<h1>Selectc one:-</h1>
+{% for i in voat %}
+<form method='get' style="margin:auto; width:380px; padding:17px;background-color:white;" align="midle">
+<img src="/media/{{i.news_image}}" hight="80" width="30"><input type="text" name="hh" placeholder="{{i.Candidates}}" value="{{i.Candidates}}"readonly>
+<input type="submit" value="vote"><br>
+</form>
+{% endfor %}
+
+</div> 
+ <script src="{% static 'js/pre.js' %}" charset="utf-8"></script>
+</body>
+</html>
