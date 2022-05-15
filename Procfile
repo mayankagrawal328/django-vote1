@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT voting.wsgi:application
+web: gunicorn voting.wsgi --log-file -
